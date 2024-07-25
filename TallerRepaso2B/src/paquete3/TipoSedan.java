@@ -9,12 +9,9 @@ public class TipoSedan extends Vehiculo {
     private double valorDescuento;
     private double seguroAdicionalMecanico;
 
-    public TipoSedan(Comprador pro, String ma, double precioB, double porA,
-            double valD, double segAM) {
+    public TipoSedan(Comprador pro, String ma, double precioB, double porA) {
         super(pro, ma, precioB);
         porcentajeDescuento = porA;
-        valorDescuento = valD;
-        seguroAdicionalMecanico = segAM;
 
     }
 
@@ -22,12 +19,12 @@ public class TipoSedan extends Vehiculo {
         porcentajeDescuento = n;
     }
 
-    public void establecerValorDescuento(double n) {
-        valorDescuento = n;
+    public void establecerValorDescuento() {
+        valorDescuento = precioBase * (porcentajeDescuento / 100);
     }
 
-    public void establecerSeguroAdicionalMecanico(double n) {
-        seguroAdicionalMecanico = n;
+    public void establecerSeguroAdicionalMecanico() {
+        seguroAdicionalMecanico = precioBase * 0.01;
     }
 
     public double obtenerPorcentajeDescuento() {
@@ -41,9 +38,26 @@ public class TipoSedan extends Vehiculo {
     public double obtenerSeguroAdicionalMecanico() {
         return seguroAdicionalMecanico;
     }
-    
+
     @Override
-    public void calcularPrecioFinal() {
-        
+    public void calcularPrecioFinal() {   
+        precioFinal = precioBase - valorDescuento + seguroAdicionalMecanico;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Vehiculo Tipo Sedan: \n "
+                + "%s: \n"
+                + "Porcentaje Descuento: %.2f\n"
+                + "Valor Adicional de Importacion: %.2f\n"
+                + "Valor de Descuento: %.2f\n"
+                + "Precio Final: %.2f\n",
+                super.toString(),
+                porcentajeDescuento,
+                valorDescuento,
+                seguroAdicionalMecanico,
+                precioFinal);
+
+        return cadena;
     }
 }

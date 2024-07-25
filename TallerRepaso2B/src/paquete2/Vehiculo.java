@@ -51,5 +51,17 @@ public abstract class Vehiculo {
 
     public abstract void calcularPrecioFinal();
     
-    
+    @Override
+    public String toString() {
+        String cadena = String.format("Propietario: %s\n"
+                + "Marca: %s\n"
+                + "Precio Base: %.2f\n"
+                + "Precio Final: %.2f\n",
+                propietario,
+                marca,
+                precioBase,
+                precioFinal);
+                
+        return cadena;
+    }
 }

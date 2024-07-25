@@ -13,7 +13,7 @@ public class Comprador {
     }
 
     public void establecerNombre(String n) {
-        nombre = nombre;
+        nombre = n;
     }
 
     public void establecerCedula(String n) {
@@ -38,3 +38,4 @@ public class Comprador {
         return cadena;
     } 
 }
+
