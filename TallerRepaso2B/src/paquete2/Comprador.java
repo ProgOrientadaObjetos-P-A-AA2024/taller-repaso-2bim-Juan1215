@@ -31,7 +31,7 @@ public class Comprador {
     @Override
     public String toString() {
         String cadena = String.format("Nombre: %s\n"
-                + "Cedula: %s\n",
+                + "Cedula: %s",
                 nombre,
                 cedula);
         

@@ -29,7 +29,7 @@ public class Concensionaria {
         for (int i = 0; i < listaVehiculos.size(); i++) {
             suma = suma + listaVehiculos.get(i).obtenerPrecioFinal();
         }
-        ventasTotales = suma; 
+        ventasTotales = suma;
     }
 
     public void establecerVehiculoMasCaro() {
@@ -38,16 +38,18 @@ public class Concensionaria {
             if (listaVehiculos.get(i).obtenerPrecioFinal() > caro) {
                 caro = listaVehiculos.get(i).obtenerPrecioFinal();
             }
+            vehiculoMasCaro = caro;
         }
     }
 
     public void establecerVehiculoMasBarato() {
-         double barato = 1000000;
+        double barato = 1000000;
         for (int i = 0; i < listaVehiculos.size(); i++) {
             if (listaVehiculos.get(i).obtenerPrecioFinal() < barato) {
                 barato = listaVehiculos.get(i).obtenerPrecioFinal();
             }
-        };
+            vehiculoMasBarato = barato;
+        }
     }
 
     public String obtenerNombre() {
@@ -69,23 +71,23 @@ public class Concensionaria {
     public double obtenerVehiculoMasBarato() {
         return vehiculoMasBarato;
     }
-    
+
     @Override
     public String toString() {
         String cadena = String.format("%s: \n", nombre);
-                for (int i = 0; i < listaVehiculos.size(); i++) {
-                    cadena = String.format("%S %s\n",cadena, 
-                            listaVehiculos.get(i));
+        for (int i = 0; i < listaVehiculos.size(); i++) {
+            cadena = String.format("%s %s\n", cadena,
+                    listaVehiculos.get(i));
         }
-        cadena = String.format("%s\n"
+        cadena = String.format("%s"
                 + "Costo del vehiculo mas caro: %.2f\n "
                 + "Costo del vehiculo menos caro: %.2f\n"
-                + "Ventas Totales: %%.2f\n",
+                + "Ventas Totales: %.2f\n",
                 cadena,
                 vehiculoMasCaro,
                 vehiculoMasBarato,
                 ventasTotales);
-        
+
         return cadena;
-    }  
+    }
 }

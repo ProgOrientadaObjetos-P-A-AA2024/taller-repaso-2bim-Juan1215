@@ -55,12 +55,10 @@ public abstract class Vehiculo {
     public String toString() {
         String cadena = String.format("Propietario: %s\n"
                 + "Marca: %s\n"
-                + "Precio Base: %.2f\n"
-                + "Precio Final: %.2f\n",
+                + "Precio Base: %.2f\n",
                 propietario,
                 marca,
-                precioBase,
-                precioFinal);
+                precioBase);
                 
         return cadena;
     }

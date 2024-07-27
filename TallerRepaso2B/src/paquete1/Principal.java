@@ -23,8 +23,8 @@ public class Principal {
         suv1.establecerSeguroPersonas();
         
         
-        Comprador comprador4 = new Comprador("Luis Cordova", "1125175874");
-        TipoCamioneta camioneta1 = new TipoCamioneta(comprador1, "Chevrolet",
+        Comprador comprador4 = new Comprador("Luis Sanchez", "1125175874");
+        TipoCamioneta camioneta1 = new TipoCamioneta(comprador4, "Chevrolet",
                 35000, 10);
         camioneta1.establecerValorAdicionalImportacion();
         camioneta1.establecerSeguroAdicionalMantenimiento();
@@ -39,11 +39,12 @@ public class Principal {
             listaVehiculos.get(i).calcularPrecioFinal();
         }
         
-        Concensionaria conce = new Concensionaria("AutoCenter", listaVehiculos);
+        Concensionaria conce = new Concensionaria("Centro Concensionario", 
+                listaVehiculos);
 
         conce.establecerVentasTotales();
-        conce.establecerVehiculoMasCaro();
         conce.establecerVehiculoMasBarato();
+        conce.establecerVehiculoMasCaro();
 
         System.out.println(conce);
     }

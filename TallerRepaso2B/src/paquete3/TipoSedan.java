@@ -47,7 +47,7 @@ public class TipoSedan extends Vehiculo {
     @Override
     public String toString() {
         String cadena = String.format("Vehiculo Tipo Sedan: \n "
-                + "%s: \n"
+                + "%s "
                 + "Porcentaje Descuento: %.2f\n"
                 + "Valor Adicional de Importacion: %.2f\n"
                 + "Valor de Descuento: %.2f\n"
